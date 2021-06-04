@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(0);
 define('PATH_TO', '../../../');
 
 require_once PATH_TO . 'config/system/Path.php';
