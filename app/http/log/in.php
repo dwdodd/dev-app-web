@@ -25,4 +25,4 @@ if( $token != $_SESSION['token'] ){
 
 unset($token, $_SESSION['token']);
 
-new login($email, $password);
+new In($email, $password);
