@@ -1,7 +1,7 @@
 <?php
 
-require_once 'library/PHPMailer/PHPMailer.php';
-require_once 'library/PHPMailer/SMTP.php';
+require_once '../../../PHPMailer/PHPMailer.php';
+require_once '../../../PHPMailer/SMTP.php';
 
 $_POST = json_decode(file_get_contents("php://input"), true);
 

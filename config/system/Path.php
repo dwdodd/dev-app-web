@@ -14,10 +14,10 @@ class Path
         ];
     }
 
-    public static function isGreaterThan($info)
+    public static function isGreaterThan($info, $n)
     {
-        if(count($info) > 2 ){
-            header('location: '.PATH.'aviso/'.$info[2]);
+        if(count($info) > $n ){
+            header('location: '.PATH.'aviso/'.$info[$n]);
         }
     }
 }

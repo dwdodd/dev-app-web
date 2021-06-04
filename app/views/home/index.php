@@ -8,7 +8,7 @@ require_once PATH_TO . 'config/system/NoSessionAllowed.php';
 require_once PATH_TO . 'config/layout/Template.php';
 
 $info = Path::_path($_SERVER['REQUEST_URI']);
-        Path::isGreaterThan($info->info);
+        Path::isGreaterThan($info->info, 2);
 
 $content = file_get_contents('elements/home.php');
 Template::html('Usuarios', $content);
