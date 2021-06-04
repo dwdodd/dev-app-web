@@ -1,0 +1,39 @@
+<IfModule mod_rewrite.c>
+  Options -Indexes
+  RewriteEngine On
+  RewriteCond %{REQUEST_FILENAME} !-l
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-f
+
+  ################### VIEWS-MAIN #####################
+  RewriteRule ^inicio(.*)$ app/views/home/index.php?info=$1 [NC,QSA,L]
+
+  ########## HTTP ##########
+  RewriteRule ^login(.*)$ app/http/log/in.php?info=$1 [NC,QSA,L]
+
+  ########### VIEWS-ADD ############
+  RewriteRule ^registrar(.*)$ app/views/user/add.php?info=$1 [NC,QSA,L]
+
+  ########### VIEWS-GET ############
+  RewriteRule ^usuario(.*)$ app/views/user/get.php?info=$1 [NC,QSA,L]
+
+  ########### Error-Document ############
+  RewriteRule ^403/(.*)$ warning/403.php$1 [NC,QSA,L]
+  RewriteRule ^aviso/(.*)$ app/views/warning/index.php?info=$1 [NC,QSA,L]
+
+  ErrorDocument 404 http://localhost/dev-app-web/aviso/
+  ErrorDocument 403 http://localhost/dev-app-web/403/
+</IfModule>
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php73” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php73 .php .php7 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit
+
+<Files .htaccess>
+  Order allow,deny
+  Require all denied
+  #Deny from all
+</Files>
