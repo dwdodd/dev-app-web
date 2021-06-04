@@ -4,11 +4,11 @@ session_start();
 define('PATH_TO', '../../../');
 
 require_once PATH_TO . 'config/system/Path.php';
+require_once PATH_TO . 'config/system/NoSessionAllowed.php';
+require_once PATH_TO . 'config/layout/Template.php';
 
 $info = Path::_path($_SERVER['REQUEST_URI']);
         Path::isGreaterThan($info->info);
-
-require_once PATH_TO . 'config/layout/Template.php';
 
 $content = file_get_contents('elements/home.php');
 Template::html('Usuarios', $content);

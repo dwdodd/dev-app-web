@@ -1,6 +1,6 @@
 <?php
 
-require_once '../../../system/BaseUrl.php';
+require_once '../../../config/system/BaseUrl.php';
 
 class Out
 {

@@ -5,9 +5,9 @@ class Template
     public static function html($title, $content)
     {
         if(!isset($_SESSION)) session_start();
-        // if(!isset($_SESSION['id-session'])){
-        //     self::header_location();
-        // }
+        if(!isset($_SESSION['id-session'])){
+            self::header_location();
+        }
 
         session_regenerate_id(true);
 

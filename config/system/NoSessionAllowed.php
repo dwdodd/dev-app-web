@@ -1,6 +1,6 @@
 <?php
 
-require_once 'HeaderLocation.php';
+require_once 'BaseUrl.php';
 
 class NoSessionAllowed
 {
@@ -10,7 +10,7 @@ class NoSessionAllowed
 
         if(!@$_SESSION['id-session']) {
             session_destroy();
-            HeaderLocation::header_location();
+            BaseUrl::header_location();
             exit;
         };
     }
