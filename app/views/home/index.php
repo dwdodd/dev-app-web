@@ -9,6 +9,7 @@ require_once PATH_TO . 'config/layout/Template.php';
 
 $info = Path::_path($_SERVER['REQUEST_URI']);
         Path::isGreaterThan($info->info, 2);
+        Path::ifDiferent($info->info, 'inicio');
 
 $content = file_get_contents('elements/home.php');
 Template::html('Usuarios', $content);

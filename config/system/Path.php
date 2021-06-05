@@ -20,4 +20,11 @@ class Path
             header('location: '.PATH.'aviso/'.$info[$n]);
         }
     }
+
+    public static function ifDiferent($info, $str)
+    {
+        if($info[1] != $str ){
+            header('location: '.PATH.'aviso/'.$info[1]);
+        }
+    }
 }
