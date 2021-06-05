@@ -64,7 +64,7 @@ class Template
         exit($content);
     }
     
-    public static function token()
+    private static function token()
     {
         $_SESSION['token'] = password_hash(sha1((uniqid())), PASSWORD_DEFAULT);
         return $_SESSION['token'];

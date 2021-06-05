@@ -7,9 +7,8 @@
     <meta name="description" content="{{ description }}" />
     <meta name="keywords" content="{{ keyword }}" />
     <link rel="stylesheet" href="{{ host }}app/assets/css/loader.css" 7>
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"/>
     <title>{{ title }}</title>
-
 </head>
 
 <body>

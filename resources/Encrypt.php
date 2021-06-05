@@ -7,7 +7,7 @@ class Encrypt
         $action = trim($action);
         $output = false;
 
-        $myKey = 'W?HuLpEwNbDf#%7+2*9j(ñ';
+        $myKey = 'W?HuLpEwNbDf#%72*9j(ñ';
         $myIV = '¡¿~Ñq3=6"dkQA)!u7a^&8q';
         
         $encrypt_method = 'AES-256-CBC';

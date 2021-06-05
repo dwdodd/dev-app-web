@@ -21,10 +21,10 @@ class Path
         }
     }
 
-    public static function ifDiferent($info, $str)
+    public static function ifDiferent($info, $position, $str)
     {
-        if($info[1] != $str ){
-            header('location: '.PATH.'aviso/'.$info[1]);
+        if($info[$position] != $str ){
+            header('location: '.PATH.'aviso/'.$info[$position]);
         }
     }
 }

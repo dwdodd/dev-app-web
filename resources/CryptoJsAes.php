@@ -26,7 +26,7 @@ class CryptoJsAes
         $salt = hex2bin($json["s"]);
         $iv = hex2bin($json["iv"]);
         $ct = base64_decode($json["ct"]);
-        $concatedPassphrase =  Encrypt::datum('decrypt','tAdWmRmZOInswqdq/9EtPPDkLJSu4oRqgzwxDVgIJebR9UlhE6G5mONFlz/UaISaLyRzGTXad2VwWBCuvUNvRWXWahxvs7QArz6DMsWW3f4=') . $salt;
+        $concatedPassphrase = Encrypt::datum('decrypt','mULw9VNUsFl7xwDxZSpOXflr1WSyNuKNAYjCteKoWVUDf9kWffj4Tl9CkF3Uz89Zh7nV8T4+vMOqAEfsb9vC/Q==') . $salt;
         $md5 = [];
         $md5[0] = md5($concatedPassphrase, true);
         $result = $md5[0];

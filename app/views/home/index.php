@@ -10,11 +10,11 @@ $files = [
 foreach($files as $file) require_once($file);
 
 $info = Path::_path($_SERVER['REQUEST_URI']);
-        Path::isGreaterThan($info->info, 2);
-        Path::ifDiferent($info->info, 'inicio');
+        Path::isGreaterThan($info->info, 3);
+        Path::ifDiferent($info->info, 1, 'inicio');
 
 $content = file_get_contents('elements/home.php');
-Template::html('Dashboard', $content);
+Template::html('Inicio', $content);
 
 /*
 if($_SESSION['idtipousuario'] == 1){
