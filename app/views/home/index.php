@@ -1,6 +1,5 @@
 <?php
 
-//session_start();
 define('PATH_TO', '../../../');
 
 $files = [
@@ -15,7 +14,7 @@ $info = Path::_path($_SERVER['REQUEST_URI']);
         Path::ifDiferent($info->info, 'inicio');
 
 $content = file_get_contents('elements/home.php');
-Template::html('Usuarios', $content);
+Template::html('Dashboard', $content);
 
 /*
 if($_SESSION['idtipousuario'] == 1){
