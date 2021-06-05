@@ -1,11 +1,14 @@
 <?php
 
-session_start();
+//session_start();
 define('PATH_TO', '../../../');
 
-require_once PATH_TO . 'config/system/Path.php';
-require_once PATH_TO . 'config/system/NoSessionAllowed.php';
-require_once PATH_TO . 'config/layout/Template.php';
+$files = [
+    PATH_TO .'config/system/Path.php', 
+    PATH_TO .'config/system/NoSessionAllowed.php',
+    PATH_TO .'config/layout/Template.php'
+];
+foreach($files as $file) require_once($file);
 
 $info = Path::_path($_SERVER['REQUEST_URI']);
         Path::isGreaterThan($info->info, 2);
