@@ -1,15 +1,17 @@
 <?php
 
-//require_once '../../../resources/CryptoJsAes.php';
-require_once '../../../src/log/In.php';
+define('PATH_TO', '../../../');
+
+$files = [
+    //PATH_TO .'resources/CryptoJsAes.php', 
+    PATH_TO .'src/log/In.php'
+];
+foreach($files as $file) require_once($file);
 
 $_POST = json_decode(file_get_contents("php://input"), true);
 
-// $email     = CryptoJsAes::decrypt(@$_POST['correo']);
-// $password  = CryptoJsAes::decrypt(@$_POST['clave']);
-
-$email     = @$_POST['correo'];
-$password  = @$_POST['clave'];
+$email     = CryptoJsAes::decrypt(@$_POST['correo']);
+$password  = CryptoJsAes::decrypt(@$_POST['clave']);
 $token     = @$_POST['token'];
 
 session_start();
