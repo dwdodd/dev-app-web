@@ -66,7 +66,7 @@ class Template
     
     private static function token()
     {
-        return $_SESSION['token'] = str_shuffle('1234567890abcdefghijklmnopqrstuxyzABCDEFGHIJKLMNOPQRSTUXYZ');
+        return $_SESSION['_token'] = str_shuffle('1234567890abcdefghijklmnopqrstuxyzABCDEFGHIJKLMNOPQRSTUXYZ');
     }
 
     public static function header_location()

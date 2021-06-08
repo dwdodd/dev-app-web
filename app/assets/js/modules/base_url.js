@@ -1,5 +1,7 @@
 let url = '';
 
-window.location.host =='localhost' ? url = 'http://localhost/dev-app-web/' : url = 'https://'
+const wl = window.location;
 
-export {url};
+wl.host =='localhost' ? url = `${wl.origin}${wl.pathname}` : url = `${wl.origin}/`;
+
+export default url;

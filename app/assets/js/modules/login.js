@@ -1,4 +1,4 @@
-import {url} from './base_url.js';
+import url from './base_url.js';
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
         email   = CryptoJS.AES.encrypt(JSON.stringify(email),fdecoderto,{ format: CryptoJSAesJson }).toString();
         passwd  = CryptoJS.AES.encrypt(JSON.stringify(passwd),fdecoderto,{ format: CryptoJSAesJson }).toString();
 
-        fetch(`${url}app/http/log/in.php`,{
+        fetch(`${url}login`,{
             method:'post',
             body: JSON.stringify({ email, passwd, token }),
             headers:{ 'Content-Type': 'application/json' }
