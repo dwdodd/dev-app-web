@@ -21,8 +21,8 @@
   RewriteRule ^403/(.*)$ warning/403.php$1 [NC,QSA,L]
   RewriteRule ^aviso/(.*)$ app/views/warning/index.php?info=$1 [NC,QSA,L]
 
-  ErrorDocument 404 http://localhost/dev-app-web/aviso/
-  ErrorDocument 403 http://localhost/dev-app-web/403/
+  ErrorDocument 404 http://localhost/dev-app/aviso/
+  ErrorDocument 403 http://localhost/dev-app/403/
 </IfModule>
 
 <Files .htaccess>
