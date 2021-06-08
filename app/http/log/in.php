@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+if(!isset($_SESSION)) session_start();
 define('PATH_TO', '../../../');
 
 $files = [
@@ -15,9 +15,7 @@ $email     = CryptoJsAes::decrypt(@$_POST['email']);
 $password  = CryptoJsAes::decrypt(@$_POST['passwd']);
 $token     = @$_POST['token'];
 
-//!= $_SESSION['token']
-if( !$token ){
-    session_destroy();
+if( $token != $_SESSION['token'] ){
     exit(json_encode([
         'code' => 2,
         'status' => 'error',
@@ -27,4 +25,4 @@ if( !$token ){
 
 unset($token, $_SESSION['token']);
 
-new In($email, $password);
+In::access($email, $password);

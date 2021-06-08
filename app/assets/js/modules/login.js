@@ -57,17 +57,19 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(res => {
 
             if(res.code == 1){
-                localStorage.setItem('login', JSON.stringify(res.userdata));
+                localStorage.setItem('_usrdt', JSON.stringify(res.userdata));
 
                 setTimeout(() => {
                     $('#btn-login').html(`Acceder`);
                     toastr.success(`Bienvenido`, 'Mensaje del sistema');
-
-                    setTimeout(() => {
-                        window.location = `${url}inicio`;
-                    }, 2000);
-                }, 1500);
+                    setTimeout(() => window.location = `${url}inicio`, 1500);
+                }, 1000);
                 
+            }
+            if(res.code == 2){
+                $('#btn-login').html(`Acceder`);
+                $('#btn-login').prop(`disabled`, false);
+                return toastr.error(`Lo sentimos. ${res.error}`, 'Mensaje del sistema');
             }
 
         })

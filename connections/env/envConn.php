@@ -1,6 +1,6 @@
 <?php
 
 /** Desarrollo **/
-define('DNS', 'mysql:host=localhost;dbname=_bd');
+define('DNS', 'mysql:host=localhost;dbname=rxenline_bd');
 define('USER', 'root');
 define('PASS', '');

@@ -8,7 +8,7 @@ foreach($files as $file) require_once($file);
 
 class In
 {
-    public function __construct($email, $password)
+    public static function access($email, $password)
     {
         // @$result = QueryManager::openquery("
         //     select * from app_usuarios
@@ -23,9 +23,9 @@ class In
 
         //if(password_verify($password, $result->clave)){
 
-            $_SESSION['user-time']       = (time()+24*60*60);
-            $_SESSION['id-session']      = session_id();
-            $_SESSION['user-token']      = Encrypt::datum('encrypt',$_SESSION['user-time']);
+            $_SESSION['user-time']  = (time()+24*60*60);
+            $_SESSION['id-session'] = session_id();
+            $_SESSION['user-token'] = Encrypt::datum('encrypt',$_SESSION['user-time']);
     
             exit(json_encode([
                 'code' => 1,
